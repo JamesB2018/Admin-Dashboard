@@ -42,9 +42,9 @@ function App() {
                 <Routes>
                   <Route index element={<WelcomePage />} /> {/* //Index just means we are showing on the index page*/}
                   <Route index element={<Home />} />
-                  <Route index element={<ForgotPassword />} />
-                  <Route index element={<Register />} />
-                  <Route index element={<Login />} />
+                  <Route path="/forgot-password" element={<ForgotPassword />} />
+                  <Route path="/register" element={<Register />} />
+                  <Route path="/login" element={<Login />} />
                 </Routes>
                 <RefineKbar />
                 <UnsavedChangesNotifier />
@@ -59,3 +59,4 @@ function App() {
 }
 
 export default App;
+ 
