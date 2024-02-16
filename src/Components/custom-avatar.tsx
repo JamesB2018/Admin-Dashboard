@@ -1,9 +1,13 @@
- import {Avatar as AntdAvatar} from 'antd'
+ import {Avatar as AntdAvatar, AvatarProps} from 'antd'
+
+ type Props = AvatarProps & {
+    name: string;
+ }
  
- const CustomAvatar = () => {
+ const CustomAvatar = ({name, style, ...rest}: Props) => {
   return (
     <AntdAvatar
-    alt={'WHatever I want'}
+    alt={'Whatever I want'}
     size="small"
     style={{ 
         backgroundColor: '#87d068',
@@ -12,7 +16,7 @@
         border: 'none'
     }}
     >
-        JB
+        {name}
     </AntdAvatar>
   )
 }
