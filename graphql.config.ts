@@ -20,10 +20,13 @@ const config: IGraphQLConfig = {
             //set the config of the typescript plugin
             // this defines how the generated types will look like
           config: {
-            skipTypename: true,
-            enumsAsTypes: true,
-            scalars: {
-              DateTime: {
+            skipTypename: true, //skipTypename is used to remove __typename from the generated types
+            enumsAsTypes: true, //enumAsTypes is used to generate enums as types instead of enums.
+            //scalars is used todefine how the scalars interpret DateTime, JSON, etc. will be generated. 
+            scalars: { 
+                // scalar is a type that is not a list and does not have fields. It is a usually a primitive type
+                // DateTime is a scalar type that is used to represent date and time
+              DateTime: { 
                 input: "string",
                 output: "string",
                 format: "date-time",
