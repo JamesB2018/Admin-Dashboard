@@ -34,6 +34,7 @@ const config: IGraphQLConfig = {
             },
           },
         },
+        // Generates typescript types from GraphQL operations. GraphQL operations are queries, mutations, and subscriptions we write in our code to communicate with the GraphQL API
         "src/graphql/types.ts": {
           preset: "import-types",
           documents: ["src/**/*.{ts,tsx}"],
@@ -42,8 +43,10 @@ const config: IGraphQLConfig = {
             skipTypename: true,
             enumsAsTypes: true,
             preResolveTypes: false,
+            // useTypeImports is used to import types using import type instead of just import
             useTypeImports: true,
           },
+          // presetConfig is used to define the config of the preset
           presetConfig: {
             typesPath: "./schema.types",
           },
