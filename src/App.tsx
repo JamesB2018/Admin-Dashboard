@@ -43,18 +43,21 @@ function App() {
               >
                 <Routes>
                   <Route index element={<WelcomePage />} /> {/* //Index just means we are showing on the index page*/}
-                  <Route index element={<Home />} />
                   <Route path="/forgot-password" element={<ForgotPassword />} />
                   <Route path="/register" element={<Register />} />
                   <Route path="/login" element={<Login />} />
                   <Route 
                     element={<Authenticated
                     key="authenticated-layout"
-                     fallback={<CatchAllNavigate to="/login" />}/>}
+                     fallback={<CatchAllNavigate to="/login" />}
                   >
                     <Layout>
                       <Outlet />
                     </Layout>
+                    </Authenticated>
+                    }>
+                    <Route index element={<Home />} />
+                    
                   </Route>
                 </Routes>
                 <RefineKbar />
